@@ -31,7 +31,7 @@ flatpickr(".flatpickr",{
   minDate: new Date(),
   dateFormat: "d/m/Y",
   onChange: function (date){
-    console.log(date)
+
     fetch(`/app/avaiable/{{provider.id}}?date=${date[0]
     .getTime()}`)
     .then((res)=>{

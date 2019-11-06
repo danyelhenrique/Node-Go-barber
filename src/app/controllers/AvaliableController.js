@@ -1,9 +1,19 @@
 const { Appointment } = require('../models')
+
 const { Op } = require('sequelize')
 const moment = require('moment')
 
+const validators = require('../../utils/validators')
+
 class AvaliableController {
   async index (req, res) {
+    try {
+      validators.existOrErro(req.params.provider, 'provider not informed.')
+    } catch (error) {
+      console.log(error)
+      return res.redirect(req.originalUrl)
+    }
+
     const date = moment(parseInt(req.query.date))
 
     const appointments = await Appointment.findAll({

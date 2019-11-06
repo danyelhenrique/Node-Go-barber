@@ -35,6 +35,7 @@ routes.get('/app/logout', SessionController.destroy)
 routes.get('/app/dashboard', DashBoardController.index)
 
 routes.get('/app/appointments/new/:provider', AppointmentsController.create)
+routes.post('/app/appointments/new/:provider', AppointmentsController.store)
 routes.get('/app/avaiable/:provider', AvaliableController.index)
 
 module.exports = routes
