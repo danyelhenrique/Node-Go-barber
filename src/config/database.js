@@ -1,9 +1,10 @@
+require('./dotenv')
 module.exports = {
   dialect: 'postgres',
-  host: '127.0.0.1',
-  username: 'postgres',
-  password: '123',
-  database: 'gonodemodulo2',
+  host: process.env.PS_HOST,
+  username: process.env.PS_USER,
+  password: process.env.PS_PASSWORD,
+  database: process.env.PS_DATABASE,
   operatorAliases: false,
   define: {
     timestamps: true,
