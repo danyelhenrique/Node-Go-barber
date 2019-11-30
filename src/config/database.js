@@ -6,6 +6,8 @@ module.exports = {
   password: process.env.PS_PASSWORD,
   database: process.env.PS_DATABASE,
   operatorAliases: false,
+  native: true,
+  ssl: true,
   define: {
     timestamps: true,
     underscored: true,
